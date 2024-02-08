@@ -1,0 +1,18 @@
+.__devine--studio-provider {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  border: 1px solid #000;
+}
+
+.__devine--toolbar {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: #000;
+  border: 1px solid #000;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
