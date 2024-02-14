@@ -5,8 +5,8 @@ import type { StudioConfig } from "../lib/types";
 import GlobalStateProvider from "../lib/state/StateProvider";
 import Toolbar from "./Toolbar";
 import Sidebar from "./Sidebar";
-import Container from "./Container";
 import RegisterComponents from "./RegisterComponents";
+import Container from "./Container";
 
 const Provider: React.FC<{
   children: React.ReactNode;
@@ -19,7 +19,7 @@ const Provider: React.FC<{
       <RegisterComponents componentTypes={componentTypes} />
       <div className="w-screen h-screen flex fixed top-0 bg-zinc-900">
         <Container>{children}</Container>
-        <Sidebar />
+        <Sidebar plugins={config.plugins?.sidebar} />
         <Toolbar />
       </div>
     </GlobalStateProvider>

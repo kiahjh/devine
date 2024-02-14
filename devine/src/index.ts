@@ -1,3 +1,4 @@
-import Studio from "./studio";
+import Studio from "./Studio";
+import * as Plugin from "./plugins/Plugin";
 
-export { Studio };
+export { Studio, Plugin };

@@ -1,13 +1,10 @@
-import type { ActionMode, RegisteredComponent } from "../types";
+import type { ToolbarMode, RegisteredComponent } from "../types";
 
 export interface State {
-  mode: ActionMode | null;
+  mode: ToolbarMode | null;
   sidebarOpen: boolean;
   registeredComponents: RegisteredComponent[];
-  selectedComponent: {
-    type: string;
-    index: number;
-  } | null;
+  selectedComponent: string | null;
   containerPosition: {
     x: number;
     y: number;
@@ -23,11 +20,11 @@ export const INITIAL_STATE: State = {
 };
 
 export type Action =
-  | { type: `setMode`; payload: ActionMode | null }
+  | { type: `setMode`; payload: ToolbarMode | null }
   | { type: `openSidebar` }
   | { type: `closeSidebar` }
   | { type: `registerComponents`; payload: RegisteredComponent[] }
-  | { type: `selectComponent`; payload: { type: string; index: number } }
+  | { type: `selectComponent`; payload: string }
   | { type: `moveContainer`; payload: { x: number; y: number } };
 
 export default function reducer(state: State, action: Action): State {

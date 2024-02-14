@@ -8,12 +8,16 @@ const Container: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div
       className={cx(
-        `__devine-child-container flex-grow h-screen overflow-y-scroll overflow-hidden relative z-0 transition-[border-radius,transform] duration-500`,
+        `__devine-child-container flex-grow h-screen overflow-y-scroll overflow-hidden relative z-0 transition-[border-radius,transform,opacity] duration-500`,
         !(state.containerPosition.x === 0 && state.containerPosition.y === 0) &&
+          state.mode === `select` &&
           `rounded-2xl`,
+        state.mode === `settings` && `opacity-20`,
       )}
       style={{
-        transform: `translate(${state.containerPosition.x}px, ${state.containerPosition.y}px)`,
+        transform: `translate(${
+          state.mode === `select` ? state.containerPosition.x : 0
+        }px, ${state.mode === `select` ? state.containerPosition.y : 0}px)`,
         transformOrigin: `top left`,
       }}
     >
@@ -32,35 +36,32 @@ const Container: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
           return (
             <>
-              {state.selectedComponent?.type === c.type &&
-                state.selectedComponent?.index === i && (
+              {state.selectedComponent === c.id && (
+                <div key={`__devine-component-overlay--${c.type}_${i}__border`}>
                   <div
-                    key={`__devine-component-overlay--${c.type}_${i}__border`}
-                  >
-                    <div
-                      className="fixed bg-blue-500/20 h-screen w-0.5"
-                      style={{ left: `${elementX - 6}px`, top: 0 }}
-                    />
-                    <div
-                      className="fixed bg-blue-500/20 h-screen w-0.5"
-                      style={{
-                        left: `${elementX + elementWidth + 4}px`,
-                        top: 0,
-                      }}
-                    />
-                    <div
-                      className="absolute bg-blue-500/20 w-screen h-0.5"
-                      style={{ top: `${elementY - 6}px`, left: 0 }}
-                    />
-                    <div
-                      className="absolute bg-blue-500/20 w-screen h-0.5"
-                      style={{
-                        top: `${elementY + elementHeight + 4}px`,
-                        left: 0,
-                      }}
-                    />
-                  </div>
-                )}
+                    className="fixed bg-blue-500/20 h-screen w-0.5"
+                    style={{ left: `${elementX - 6}px`, top: 0 }}
+                  />
+                  <div
+                    className="fixed bg-blue-500/20 h-screen w-0.5"
+                    style={{
+                      left: `${elementX + elementWidth + 4}px`,
+                      top: 0,
+                    }}
+                  />
+                  <div
+                    className="absolute bg-blue-500/20 w-screen h-0.5"
+                    style={{ top: `${elementY - 6}px`, left: 0 }}
+                  />
+                  <div
+                    className="absolute bg-blue-500/20 w-screen h-0.5"
+                    style={{
+                      top: `${elementY + elementHeight + 4}px`,
+                      left: 0,
+                    }}
+                  />
+                </div>
+              )}
               <div
                 className={cx(
                   `absolute rounded-xl hover:opacity-100 opacity-0 transition-opacity duration-300 cursor-pointer group flex items-center justify-center bg-blue-500/70 border-2 border-blue-500`,
@@ -82,7 +83,7 @@ const Container: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   dispatch({ type: `openSidebar` });
                   dispatch({
                     type: `selectComponent`,
-                    payload: { type: c.type, index: i },
+                    payload: c.id,
                   });
                 }}
               >

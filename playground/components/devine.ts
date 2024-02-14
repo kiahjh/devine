@@ -1,8 +1,9 @@
 import { Studio } from "../../devine/src";
+import Classify from "../../devine/src/plugins/builtins/Classify";
 import Card from "./Card";
 import Profile from "./Profile";
 
-const studio = new Studio({
+const devine = new Studio({
   components: [
     {
       id: `card`,
@@ -13,6 +14,7 @@ const studio = new Studio({
       component: Profile,
     },
   ],
+  // plugins: { sidebar: [Classify] },
 });
 
-export default studio;
+export default devine;
