@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import type { Action, State } from "./state/store";
+import { GlobalStateContext } from "./state/StateProvider";
 
 export function useScrollY(): number {
   const [scrollY, setScrollY] = useState(0);
@@ -12,4 +14,11 @@ export function useScrollY(): number {
   }, [scrollY]);
 
   return scrollY;
+}
+
+export function useGlobalState(): {
+  state: State;
+  dispatch: React.Dispatch<Action>;
+} {
+  return React.useContext(GlobalStateContext);
 }
