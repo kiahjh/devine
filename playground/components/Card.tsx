@@ -1,7 +1,10 @@
 import React from "react";
 
 const Card: React.FC = () => (
-  <div className="bg-white p-8 rounded-lg border shadow-lg" devine-id="card">
+  <div
+    className="bg-white p-8 rounded-lg border shadow-lg"
+    devine-id="InfoCard"
+  >
     <h1 className="text-2xl font-semibold">Lorem ipsum</h1>
     <h2 className="text-base text-indigo-400 font-medium">
       Dolor sit amet consectetur

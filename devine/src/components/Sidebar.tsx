@@ -1,6 +1,11 @@
 import React from "react";
 import cx from "classnames";
-import { LayoutGridIcon } from "lucide-react";
+import {
+  LayoutGridIcon,
+  MoveHorizontalIcon,
+  MoveVerticalIcon,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import type { SidebarPluginType } from "../plugins/Plugin";
 import { useGlobalState } from "../lib/hooks";
 import { getComponent } from "../lib/component";
@@ -12,9 +17,7 @@ interface Props {
 const Sidebar: React.FC<Props> = ({ plugins }) => {
   const { state } = useGlobalState();
 
-  const selectedComponent = state.selectedComponent
-    ? getComponent(`TODO`)
-    : null;
+  const c = getComponent(state.selectedComponent ?? ``);
 
   return (
     <div
@@ -23,11 +26,25 @@ const Sidebar: React.FC<Props> = ({ plugins }) => {
         !state.sidebarOpen && `-mr-[400px]`,
       )}
     >
-      {selectedComponent && (
+      {c && (
         <div className="flex-grow flex flex-col">
           <header>
-            <h2 className="text-4xl font-medium">{selectedComponent.type}</h2>
-            <div></div>
+            <h3 className="text-zinc-400 font-mono">{`<${c.element.nodeName.toLowerCase()}>`}</h3>
+            <h2 className="text-4xl font-medium">{c.type}</h2>
+            <div className="flex items-center gap-2 mt-1">
+              <Stat
+                icon={MoveHorizontalIcon}
+                value={`${c.element
+                  .getBoundingClientRect()
+                  .width.toFixed(1)}px`}
+              />
+              <Stat
+                icon={MoveVerticalIcon}
+                value={`${c.element
+                  .getBoundingClientRect()
+                  .height.toFixed(1)}px`}
+              />
+            </div>
           </header>
           {!plugins || plugins.length === 0 ? (
             <div className="flex-grow flex justify-center items-center">
@@ -39,7 +56,7 @@ const Sidebar: React.FC<Props> = ({ plugins }) => {
               </div>
             </div>
           ) : (
-            <div></div>
+            <div>uh</div>
           )}
         </div>
       )}
@@ -47,3 +64,15 @@ const Sidebar: React.FC<Props> = ({ plugins }) => {
   );
 };
 export default Sidebar;
+
+interface StatProps {
+  icon: LucideIcon;
+  value: string;
+}
+
+const Stat: React.FC<StatProps> = ({ icon: Icon, value }) => (
+  <div className="flex items-center gap-0.5">
+    <Icon size={12} className="text-zinc-400" />
+    <span className="text-sm text-zinc-500">{value}</span>
+  </div>
+);

@@ -6,11 +6,11 @@ import Profile from "./Profile";
 const devine = new Studio({
   components: [
     {
-      id: `card`,
+      id: `InfoCard`,
       component: Card,
     },
     {
-      id: `profile`,
+      id: `ProfileCard`,
       component: Profile,
     },
   ],
