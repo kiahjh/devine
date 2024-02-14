@@ -48,8 +48,8 @@ const ToolbarButton: React.FC<ToolbarButtonProps> = ({
   <button
     onClick={() => setMode(mode === to ? null : to)}
     className={cx(
-      `rounded-lg p-2 hover:bg-gray-800 transition-[transform,background-color] duration-150 active:scale-95 active:bg-gray-600`,
-      mode === to ? `text-blue-300` : `text-gray-200 hover:text-white`,
+      `rounded-lg p-2 hover:bg-zinc-800 transition-[transform,background-color] duration-150 active:scale-95 active:bg-zinc-600`,
+      mode === to ? `text-blue-300` : `text-zinc-200 hover:text-white`,
     )}
   >
     <Icon size={24} />
