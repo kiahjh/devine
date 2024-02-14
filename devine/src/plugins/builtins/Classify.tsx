@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowUpIcon, CheckIcon, PlusIcon } from "lucide-react";
+import { ArrowUpIcon, CheckIcon, CopyIcon, PlusIcon } from "lucide-react";
 import cx from "classnames";
 import type { SidebarPluginComponent } from "../Plugin";
 import { SidebarPlugin } from "../Plugin";
@@ -15,7 +15,15 @@ const SidebarComponent: SidebarPluginComponent = ({ component: c }) => {
   const [newClass, setNewClass] = useState(``);
 
   return (
-    <div className="border-y border-white/10 py-4">
+    <div className="border-y border-white/10 py-4 relative">
+      <button
+        className="absolute top-2 right-0 w-10 h-10 rounded-lg flex justify-center items-center text-zinc-500 hover:bg-zinc-800 active:bg-zinc-700 active:text-zinc-400 active:scale-90 transition-[background-color,color,transform] duration-200"
+        onClick={() =>
+          navigator.clipboard.writeText(classes.map((cl) => cl.value).join(` `))
+        }
+      >
+        <CopyIcon size={20} />
+      </button>
       <h3 className="text-lg font-medium">Classes:</h3>
       <div>
         {classes.length === 0 ? (
