@@ -7,7 +7,8 @@ import {
   SettingsIcon,
 } from "lucide-react";
 import cx from "classnames";
-import type { ToolbarMode, LucidIcon } from "../lib/types";
+import type { LucideIcon } from "lucide-react";
+import type { ToolbarMode } from "../lib/types";
 import { useGlobalState } from "../lib/hooks";
 
 const Toolbar: React.FC = () => {
@@ -36,7 +37,7 @@ export default Toolbar;
 
 interface ToolbarButtonProps {
   to: ToolbarMode;
-  icon: LucidIcon;
+  icon: LucideIcon;
 }
 
 const ToolbarButton: React.FC<ToolbarButtonProps> = ({ to, icon: Icon }) => {

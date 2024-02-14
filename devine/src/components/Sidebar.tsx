@@ -56,7 +56,11 @@ const Sidebar: React.FC<Props> = ({ plugins }) => {
               </div>
             </div>
           ) : (
-            <div>uh</div>
+            <div className="flex-grow flex flex-col mt-8">
+              {plugins.map(({ component: Component }) => (
+                <Component component={c} />
+              ))}
+            </div>
           )}
         </div>
       )}

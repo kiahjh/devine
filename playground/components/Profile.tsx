@@ -1,6 +1,6 @@
 import React from "react";
 
-const Profile: React.FC = () => (
+const ProfileCard: React.FC = () => (
   <div
     className="border shadow-lg rounded-lg bg-white p-8 flex flex-col items-center"
     devine-id="ProfileCard"
@@ -11,4 +11,4 @@ const Profile: React.FC = () => (
   </div>
 );
 
-export default Profile;
+export default ProfileCard;

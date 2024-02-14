@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card: React.FC = () => (
+const InfoCard: React.FC = () => (
   <div
     className="bg-white p-8 rounded-lg border shadow-lg"
     devine-id="InfoCard"
@@ -16,4 +16,4 @@ const Card: React.FC = () => (
   </div>
 );
 
-export default Card;
+export default InfoCard;

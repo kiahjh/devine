@@ -1,29 +1,29 @@
 import React from "react";
-import Card from "@/components/Card";
-import Profile from "@/components/Profile";
+import InfoCard from "@/components/Card";
+import ProfileCard from "@/components/Profile";
 
 const Home: React.FC = () => (
   <main className="flex gap-20 justify-center bg-zinc-50 p-20">
     <div className="flex flex-col gap-12">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <InfoCard />
+      <InfoCard />
+      <InfoCard />
+      <InfoCard />
+      <InfoCard />
+      <InfoCard />
+      <InfoCard />
+      <InfoCard />
+      <InfoCard />
     </div>
     <div className="flex flex-col gap-12">
-      <Profile />
-      <Profile />
-      <Profile />
-      <Profile />
-      <Profile />
-      <Profile />
-      <Profile />
-      <Profile />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
+      <ProfileCard />
     </div>
   </main>
 );

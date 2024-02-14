@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import devine from "../components/devine";
 import "./globals.css";
+import devine from "@/components/devine";
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <html lang="en">
