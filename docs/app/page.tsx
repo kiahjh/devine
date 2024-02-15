@@ -10,7 +10,7 @@ export const metadata = {
 const HomePage: NextPage = () => (
   <main className="w-screen h-screen flex flex-col justify-center items-center gap-4">
     <h1 className="text-4xl font-medium">Devine</h1>
-    <p className="text-zinc-500">Delightfull dev tools for React</p>
+    <p className="text-zinc-500">Delightful dev tools for React</p>
     <Link
       href="https://github.com/kiahjh/devine"
       className="text-blue-500 underline"
