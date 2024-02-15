@@ -2,7 +2,7 @@
 
 import React from "react";
 import "./globals.css";
-import devine from "@/components/devine";
+import devine from "@/devine/config";
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <html lang="en">

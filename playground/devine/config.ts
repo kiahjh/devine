@@ -1,7 +1,8 @@
 import { Studio } from "../../devine/src";
 import Classify from "../../devine/src/plugins/builtins/Classify";
-import InfoCard from "./Card";
-import ProfileCard from "./Profile";
+import InfoCard from "../components/Card";
+import ProfileCard from "../components/Profile";
+import Testing from "./custom-plugins/Testing";
 
 const devine = new Studio({
   components: [
@@ -15,7 +16,7 @@ const devine = new Studio({
     },
   ],
   plugins: {
-    sidebar: [Classify],
+    sidebar: [Classify, Testing],
   },
 });
 

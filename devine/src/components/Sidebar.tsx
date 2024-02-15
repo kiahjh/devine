@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import cx from "classnames";
 import {
+  ChevronDownIcon,
   LayoutGridIcon,
   MoveHorizontalIcon,
   MoveVerticalIcon,
@@ -17,12 +18,14 @@ interface Props {
 const Sidebar: React.FC<Props> = ({ plugins }) => {
   const { state } = useGlobalState();
 
+  const [shownPlugins, setShownPlugins] = useState<Array<string>>([]);
+
   const c = getComponent(state.selectedComponent ?? ``);
 
   return (
     <div
       className={cx(
-        `w-96 h-[calc(100vh-16px)] transition-[margin-right] duration-500 shrink-0 text-white p-8 z-20 bg-black fixed top-2 right-2 rounded-xl shadow-xl shadow-black/50 flex flex-col delay-100`,
+        `w-96 h-[calc(100vh-16px)] transition-[margin-right] duration-500 shrink-0 text-white p-8 z-20 bg-black fixed top-2 right-2 rounded-xl shadow-xl shadow-black/50 flex flex-col delay-100 overflow-scroll`,
         !state.sidebarOpen && `-mr-[400px]`,
       )}
     >
@@ -57,9 +60,40 @@ const Sidebar: React.FC<Props> = ({ plugins }) => {
             </div>
           ) : (
             <div className="flex-grow flex flex-col mt-8">
-              {plugins.map(({ component: Component }) => (
-                <Component component={c} />
-              ))}
+              {plugins.map(({ component: Component, title, icon }) => {
+                const shown = shownPlugins.includes(title);
+                return (
+                  <div
+                    className={cx(
+                      `py-4 border-t border-white/10`,
+                      !shown && `cursor-pointer`,
+                    )}
+                    onClick={() => {
+                      if (!shown) {
+                        setShownPlugins((prev) =>
+                          prev.includes(title)
+                            ? prev.filter((t) => t !== title)
+                            : [...prev, title],
+                        );
+                      }
+                    }}
+                  >
+                    {shown ? (
+                      <Component component={c} />
+                    ) : (
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-4">
+                          <div className="text-zinc-400">{icon}</div>
+                          <span className="text-lg font-medium text-zinc-200">
+                            {title}
+                          </span>
+                        </div>
+                        <ChevronDownIcon className="text-zinc-600" />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>

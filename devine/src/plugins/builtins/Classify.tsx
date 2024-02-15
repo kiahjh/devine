@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowUpIcon, CheckIcon, CopyIcon, PlusIcon } from "lucide-react";
+import { CheckIcon, CopyIcon, PlusIcon, WineIcon } from "lucide-react";
 import cx from "classnames";
 import type { SidebarPluginComponent } from "../Plugin";
 import { SidebarPlugin } from "../Plugin";
@@ -15,11 +15,16 @@ const SidebarComponent: SidebarPluginComponent = ({ component: c }) => {
   const [newClass, setNewClass] = useState(``);
 
   return (
-    <div className="border-y border-white/10 py-4 relative">
+    <div className="relative">
       <button
-        className="absolute top-2 right-0 w-10 h-10 rounded-lg flex justify-center items-center text-zinc-500 hover:bg-zinc-800 active:bg-zinc-700 active:text-zinc-400 active:scale-90 transition-[background-color,color,transform] duration-200"
+        className="absolute top-0 right-0 w-10 h-10 rounded-lg flex justify-center items-center text-zinc-500 hover:bg-zinc-800 active:bg-zinc-700 active:text-zinc-400 active:scale-90 transition-[background-color,color,transform] duration-200"
         onClick={() =>
-          navigator.clipboard.writeText(classes.map((cl) => cl.value).join(` `))
+          navigator.clipboard.writeText(
+            classes
+              .filter((cl) => cl.active)
+              .map((cl) => cl.value)
+              .join(` `),
+          )
         }
       >
         <CopyIcon size={20} />
@@ -102,10 +107,6 @@ const SidebarComponent: SidebarPluginComponent = ({ component: c }) => {
   );
 };
 
-const Classify = new SidebarPlugin(
-  `Classify`,
-  <ArrowUpIcon />,
-  SidebarComponent,
-);
+const Classify = new SidebarPlugin(`Classify`, <WineIcon />, SidebarComponent);
 
 export default Classify;
