@@ -4,3 +4,5 @@ _default:
 dev-playground:
   @pnpm --filter playground dev
 
+dev-docs:
+  @pnpm --filter docs dev
