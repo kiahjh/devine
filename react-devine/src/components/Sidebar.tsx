@@ -17,16 +17,14 @@ interface Props {
 
 const Sidebar: React.FC<Props> = ({ plugins }) => {
   const { state } = useGlobalState();
-
   const [shownPlugins, setShownPlugins] = useState<Array<string>>([]);
-
   const c = getComponent(state.selectedComponent ?? ``);
 
   return (
     <div
       className={cx(
         `w-96 h-[calc(100vh-16px)] transition-[margin-right] duration-500 shrink-0 text-white p-8 z-20 bg-black fixed top-2 right-2 rounded-xl shadow-xl shadow-black/50 flex flex-col delay-100 overflow-scroll`,
-        !state.sidebarOpen && `-mr-[400px]`,
+        (!state.sidebarOpen || state.mode !== `select`) && `-mr-[400px]`,
       )}
     >
       {c && (

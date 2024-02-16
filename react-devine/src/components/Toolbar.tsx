@@ -1,11 +1,7 @@
 "use client";
 
 import React from "react";
-import {
-  MousePointerClickIcon,
-  PlusSquareIcon,
-  SettingsIcon,
-} from "lucide-react";
+import { MousePointerClickIcon, SettingsIcon } from "lucide-react";
 import cx from "classnames";
 import type { LucideIcon } from "lucide-react";
 import type { ToolbarMode } from "../lib/types";
@@ -25,7 +21,10 @@ const Toolbar: React.FC = () => {
       >
         <ToolbarButton to={`select`} icon={MousePointerClickIcon} />
         <div className="w-0.5 h-8 bg-white/15 mx-1.5 rounded-full" />
-        <ToolbarButton to={`create`} icon={PlusSquareIcon} />
+        <div className="flex flex-col items-center px-1">
+          <span className="text-zinc-200 text-sm">Toolbar plugins</span>
+          <span className="text-zinc-500 text-xs">Coming soon!</span>
+        </div>
         <div className="w-0.5 h-8 bg-white/15 mx-1.5 rounded-full" />
         <ToolbarButton to={`settings`} icon={SettingsIcon} />
       </div>
