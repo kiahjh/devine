@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "devine": "workspace:*",
+    "react-devine": "workspace:*",
     "lucide-react": "^0.323.0",
     "next": "14.1.0",
     "react": "^18",

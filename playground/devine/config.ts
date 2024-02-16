@@ -1,5 +1,5 @@
-import { Studio } from "../../react-devine";
-import Classify from "../../react-devine/src/plugins/builtins/Classify";
+import { Studio } from "react-devine";
+import Classify from "react-devine/src/plugins/builtins/Classify";
 import InfoCard from "../components/Card";
 import ProfileCard from "../components/Profile";
 import Testing from "./custom-plugins/Testing";

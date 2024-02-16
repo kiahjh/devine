@@ -8,39 +8,6 @@ importers:
 
   .: {}
 
-  devine:
-    devDependencies:
-      '@types/react':
-        specifier: ^18.2.55
-        version: 18.2.55
-      '@types/react-dom':
-        specifier: ^18.2.19
-        version: 18.2.19
-      autoprefixer:
-        specifier: ^10.0.1
-        version: 10.4.17(postcss@8.4.35)
-      classnames:
-        specifier: ^2.5.1
-        version: 2.5.1
-      lucide-react:
-        specifier: ^0.323.0
-        version: 0.323.0(react@18.2.0)
-      postcss:
-        specifier: ^8
-        version: 8.4.35
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-      tailwindcss:
-        specifier: ^3.3.0
-        version: 3.4.1
-      typescript:
-        specifier: ^5.2.2
-        version: 5.3.3
-
   docs:
     dependencies:
       next:
@@ -77,9 +44,6 @@ importers:
 
   playground:
     dependencies:
-      devine:
-        specifier: workspace:*
-        version: link:../devine
       lucide-react:
         specifier: ^0.323.0
         version: 0.323.0(react@18.2.0)
@@ -89,6 +53,9 @@ importers:
       react:
         specifier: ^18
         version: 18.2.0
+      react-devine:
+        specifier: workspace:*
+        version: link:../react-devine
       react-dom:
         specifier: ^18
         version: 18.2.0(react@18.2.0)
@@ -113,6 +80,39 @@ importers:
         version: 3.4.1
       typescript:
         specifier: ^5
+        version: 5.3.3
+
+  react-devine:
+    devDependencies:
+      '@types/react':
+        specifier: ^18.2.55
+        version: 18.2.55
+      '@types/react-dom':
+        specifier: ^18.2.19
+        version: 18.2.19
+      autoprefixer:
+        specifier: ^10.0.1
+        version: 10.4.17(postcss@8.4.35)
+      classnames:
+        specifier: ^2.5.1
+        version: 2.5.1
+      lucide-react:
+        specifier: ^0.323.0
+        version: 0.323.0(react@18.2.0)
+      postcss:
+        specifier: ^8
+        version: 8.4.35
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      tailwindcss:
+        specifier: ^3.3.0
+        version: 3.4.1
+      typescript:
+        specifier: ^5.2.2
         version: 5.3.3
 
 packages:

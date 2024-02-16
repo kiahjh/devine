@@ -1,9 +1,8 @@
 import React from "react";
 import { EggIcon } from "lucide-react";
-import type { SidebarPluginComponent } from "../../../react-devine/src/plugins/Plugin";
-import { Plugin } from "../../../react-devine";
+import { Plugin } from "react-devine";
 
-const PluginComponent: SidebarPluginComponent = () => (
+const PluginComponent: Plugin.SidebarPluginComponent = () => (
   <div>
     <h2>testing</h2>
     <p>lorem</p>
