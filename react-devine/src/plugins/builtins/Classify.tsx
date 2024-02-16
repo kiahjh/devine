@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { CheckIcon, CopyIcon, PlusIcon, WineIcon } from "lucide-react";
 import cx from "classnames";
 import type { SidebarPluginComponent } from "../Plugin";

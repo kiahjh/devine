@@ -7,6 +7,7 @@ import Toolbar from "./Toolbar";
 import Sidebar from "./Sidebar";
 import RegisterComponents from "./RegisterComponents";
 import Container from "./Container";
+import SettingsModal from "./SettingsModal";
 
 const Provider: React.FC<{
   children: React.ReactNode;
@@ -17,10 +18,11 @@ const Provider: React.FC<{
   return (
     <GlobalStateProvider>
       <RegisterComponents componentTypes={componentTypes} />
-      <div className="w-screen h-screen flex fixed top-0 bg-zinc-900">
+      <div className="w-screen h-screen flex justify-center items-center fixed top-0 bg-zinc-900">
         <Container>{children}</Container>
         <Sidebar plugins={config.plugins?.sidebar} />
         <Toolbar />
+        <SettingsModal />
       </div>
     </GlobalStateProvider>
   );
