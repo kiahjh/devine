@@ -12,7 +12,7 @@ const Container: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         !(state.containerPosition.x === 0 && state.containerPosition.y === 0) &&
           state.mode === `select` &&
           `rounded-2xl`,
-        state.mode === `settings` && `opacity-20`,
+        state.mode === `plugins` && `opacity-20`,
       )}
       style={{
         transform: `translate(${

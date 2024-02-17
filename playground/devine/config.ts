@@ -16,7 +16,7 @@ const devine = new Studio({
     },
   ],
   plugins: {
-    sidebar: [Classify, Testing],
+    // sidebar: [Classify, Testing],
   },
 });
 

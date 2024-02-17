@@ -1,4 +1,6 @@
 packages:
   - "react-devine"
   - "playground"
-  - "docs"
+  - "website"
+  - "api"
+  - "shared-types"

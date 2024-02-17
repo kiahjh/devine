@@ -50,8 +50,8 @@ const Sidebar: React.FC<Props> = ({ plugins }) => {
           {!plugins || plugins.length === 0 ? (
             <div className="flex-grow flex justify-center items-center">
               <div className="flex flex-col items-center justify-center">
-                <LayoutGridIcon size={50} className="text-zinc-800" />
-                <h2 className="font-medium text-2xl mt-4 text-zinc-600">
+                <LayoutGridIcon size={50} className="text-zinc-600" />
+                <h2 className="font-medium text-2xl mt-4 text-zinc-400">
                   No plugins
                 </h2>
               </div>

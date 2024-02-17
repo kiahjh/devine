@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { MousePointerClickIcon, SettingsIcon } from "lucide-react";
+import { LayoutGridIcon, MousePointerClickIcon } from "lucide-react";
 import cx from "classnames";
 import type { LucideIcon } from "lucide-react";
 import type { ToolbarMode } from "../lib/types";
@@ -10,7 +10,7 @@ import { useGlobalState } from "../lib/hooks";
 const Toolbar: React.FC = () => {
   const { state } = useGlobalState();
   return (
-    <div className="fixed -bottom-10 -left-10 p-12 group rounded-3xl z-50">
+    <div className="fixed -bottom-10 -left-10 p-12 group rounded-3xl z-40">
       <div
         className={cx(
           `bg-black rounded-2xl p-2 items-center flex shadow-xl transition-[opacity,transform] duration-300 shadow-black/50`,
@@ -26,7 +26,7 @@ const Toolbar: React.FC = () => {
           <span className="text-zinc-500 text-xs">Coming soon!</span>
         </div>
         <div className="w-0.5 h-8 bg-white/15 mx-1.5 rounded-full" />
-        <ToolbarButton to={`settings`} icon={SettingsIcon} />
+        <ToolbarButton to={`plugins`} icon={LayoutGridIcon} />
       </div>
     </div>
   );
