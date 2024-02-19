@@ -2,5 +2,5 @@ packages:
   - "react-devine"
   - "playground"
   - "website"
-  - "api"
+  - "api/*"
   - "shared-types"

@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "@api/server",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "gen-supabase-types": "supabase gen types typescript --project-id 'wahsmbpbccfixetvimhi' --schema public > ./src/supabase/types.ts"

@@ -17,7 +17,7 @@ const PluginsModal: React.FC<Props> = ({ plugins }) => {
   return (
     <div
       className={cx(
-        `absolute bg-black shadow-xl shadow-black/50 flex flex-col transition-[transform,opacity,width,height,border-radius] duration-300 z-50`,
+        `absolute bg-black border-[0.5px] border-zinc-800 shadow-xl shadow-black/50 flex flex-col transition-[transform,opacity,width,height,border-radius] duration-300 z-50`,
         page === `installed`
           ? `w-[600px] h-[400px] rounded-xl`
           : `w-screen h-screen rounded-none`,

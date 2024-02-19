@@ -13,7 +13,7 @@ const Toolbar: React.FC = () => {
     <div className="fixed -bottom-10 -left-10 p-12 group rounded-3xl z-40">
       <div
         className={cx(
-          `bg-black rounded-2xl p-2 items-center flex shadow-xl transition-[opacity,transform] duration-300 shadow-black/50`,
+          `bg-black rounded-2xl p-2 items-center flex shadow-xl transition-[opacity,transform] duration-300 shadow-black/50 border-[0.5px] border-zinc-800`,
           state.mode
             ? `translate-y-0 opacity-100`
             : `translate-y-10 opacity-50 group-hover:translate-y-0 group-hover:opacity-100`,

@@ -8,7 +8,9 @@ importers:
 
   .: {}
 
-  api:
+  api/client: {}
+
+  api/server:
     dependencies:
       '@hono/node-server':
         specifier: ^1.7.0

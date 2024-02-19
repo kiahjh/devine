@@ -1,14 +1,14 @@
 _default:
   @just --choose
 
-dev-playground:
+playground:
   @rm -rf ./react-devine/dist/ > /dev/null && pnpm --filter playground dev
 
-dev-site:
+site:
   @pnpm --filter website dev
 
-dev-api:
-  @pnpm --filter api dev
+api:
+  @pnpm --filter @api/server dev
 
 gen-supabase-types:
   @pnpm --filter api gen-supabase-types

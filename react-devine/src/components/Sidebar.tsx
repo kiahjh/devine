@@ -23,7 +23,7 @@ const Sidebar: React.FC<Props> = ({ plugins }) => {
   return (
     <div
       className={cx(
-        `w-96 h-[calc(100vh-16px)] transition-[margin-right] duration-500 shrink-0 text-white p-8 z-20 bg-black fixed top-2 right-2 rounded-xl shadow-xl shadow-black/50 flex flex-col delay-100 overflow-scroll`,
+        `w-96 h-[calc(100vh-16px)] transition-[margin-right] duration-500 shrink-0 text-white p-8 z-20 bg-black border-[0.5px] border-zinc-800 fixed top-2 right-2 rounded-xl shadow-xl shadow-black/50 flex flex-col delay-100 overflow-scroll`,
         (!state.sidebarOpen || state.mode !== `select`) && `-mr-[400px]`,
       )}
     >
