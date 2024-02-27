@@ -14,6 +14,11 @@ const Provider: React.FC<{
   config: StudioConfig;
 }> = ({ children, config }) => {
   const componentTypes = config.components.map((c) => c.id);
+  const nodeEnv = process.env.NODE_ENV;
+
+  if (nodeEnv === `production`) {
+    return children;
+  }
 
   return (
     <GlobalStateProvider>

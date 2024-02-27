@@ -62,7 +62,10 @@ const InstalledPluginsPage: React.FC<{ plugins: StudioConfig["plugins"] }> = ({
         {plugins.sidebar && plugins.sidebar.length > 0 ? (
           <div className="mt-4 grid grid-cols-2 gap-4">
             {plugins.sidebar?.map((plugin) => (
-              <div className="p-4 bg-zinc-800 rounded-lg text-lg text-white font-medium flex justify-center items-center">
+              <div
+                className="p-4 bg-zinc-800 rounded-lg text-lg text-white font-medium flex justify-center items-center"
+                key={plugin.title}
+              >
                 {plugin.title}
               </div>
             ))}
