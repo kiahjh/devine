@@ -7,13 +7,18 @@ import Toolbar from "./Toolbar";
 import Sidebar from "./Sidebar";
 import RegisterComponents from "./RegisterComponents";
 import Container from "./Container";
-import SettingsModal from "./SettingsModal";
+import PluginsModal from "./PluginsModal";
 
 const Provider: React.FC<{
   children: React.ReactNode;
   config: StudioConfig;
 }> = ({ children, config }) => {
   const componentTypes = config.components.map((c) => c.id);
+  const nodeEnv = process.env.NODE_ENV;
+
+  if (nodeEnv === `production`) {
+    return children;
+  }
 
   return (
     <GlobalStateProvider>
@@ -22,7 +27,7 @@ const Provider: React.FC<{
         <Container>{children}</Container>
         <Sidebar plugins={config.plugins?.sidebar} />
         <Toolbar />
-        <SettingsModal />
+        <PluginsModal plugins={config.plugins} />
       </div>
     </GlobalStateProvider>
   );

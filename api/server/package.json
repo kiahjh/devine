@@ -1,0 +1,18 @@
+{
+  "name": "@api/server",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "gen-supabase-types": "supabase gen types typescript --project-id 'wahsmbpbccfixetvimhi' --schema public > ./src/supabase/types.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.7.0",
+    "hono": "^4.0.3"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.39.6",
+    "@types/node": "^20.11.17",
+    "dotenv": "^16.4.4",
+    "supabase": "^1.142.2",
+    "tsx": "^4.7.1"
+  }
+}

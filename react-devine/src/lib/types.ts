@@ -8,7 +8,7 @@ export type StudioConfig = {
   };
 };
 
-export type ToolbarMode = "select" | "create" | "settings";
+export type ToolbarMode = "select" | "create" | "plugins";
 
 export type RegisteredComponent = {
   type: string;

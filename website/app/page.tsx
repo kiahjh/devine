@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { NextPage } from "next";
 
 export const metadata = {
-  title: `Devine`,
+  title: `Devine - Delightful dev tools for React`,
   description: `Delightful dev tools for React`,
 };
 
