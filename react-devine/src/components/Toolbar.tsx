@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { LayoutGridIcon, MousePointerClickIcon } from "lucide-react";
+import { BlocksIcon, MousePointerClickIcon } from "lucide-react";
 import cx from "classnames";
 import type { LucideIcon } from "lucide-react";
 import type { ToolbarMode } from "../lib/types";
@@ -26,7 +26,7 @@ const Toolbar: React.FC = () => {
           <span className="text-zinc-500 text-xs">Coming soon!</span>
         </div>
         <div className="w-0.5 h-8 bg-white/15 mx-1.5 rounded-full" />
-        <ToolbarButton to={`plugins`} icon={LayoutGridIcon} />
+        <ToolbarButton to={`plugins`} icon={BlocksIcon} />
       </div>
     </div>
   );
